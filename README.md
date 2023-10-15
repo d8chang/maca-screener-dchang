@@ -28,7 +28,7 @@ Here were the interpretations/assumptions made for the fields:
 * Payment Delay - number of days the customer was late in paying
 * Subscription Type - the plan the customer's on
 * Contract length - type of contract
-* Total Spend - maybe the amount invested on customer
+* Total Spend - maybe the amount customer spent
 * Last Interaction - number of days since the last communication with the customer (assuming mutual conversation/engagement)
 * Churn - whether the customer stopped doing business with the company
 
@@ -45,7 +45,7 @@ I visualized and summarized the churn proportion against each variable, and leve
 - After a certain length of delay for payment (20 days), similar to support calls, the churn rate goes up to 100%.
 - For each subscription plan, around the same proportion of customers churned (55-58%)
 - All customers on the monthly contract churned.
-- For spend, it seems like the higher the spend, the lower the churn potential. I grouped spend in increments of 200 to check for trends among each group, and it seems that customers that are spent <400 churned in the training data (this may not reflect the same in the test data). Less spend means less investment in the customer, which could lead to the customer having less engagement with the company's product and hence lead to churn. 
+- For spend, it seems like the higher the spend, the lower the churn potential. I grouped spend in increments of 200 to check for trends among each group, and it seems that all customers that spent <400 churned in the training data (this may not reflect the same in the test data). Less spend means the customer probably has a lower commitment, which could lead to the customer having less engagement with the company's product and hence lead to churn. 
 - Last interaction between the customer and company also follows a similar trend as with support calls and payment delay. Once the last interaction reaches beyond 15 days, the churn rate goes up significantly to around 67% for those customers whose last interaction was more than 2 weeks ago.
 
 ### Modeling, Comparing Associations, and Results
@@ -59,7 +59,7 @@ Finally, I also used a heatmap to compare the associations between each pair of 
 
 Taking the results from each approach above, the top indicators of churn would be support calls, payment delays, and spend.
 
-Support calls and churn have a correlation of 0.57. An increasing number of support calls can indicate more issues and negative feedback on the product, or trouble reaching customer support. Payment delays (assuming this means the number of days late a customer paid) has an association with churn at 0.31 - longer delays could indicate not as much focus/attention on using the product and/or leading to forgetting the payment deadline. Spend also has an impact on churn, but an inverse relationship at -0.4. As seen in the visualization in the EDA section, the less spend invested in a customer may lead to the customer mutually having less investment in the product and lower commitment. 
+Support calls and churn have a correlation of 0.57. An increasing number of support calls can indicate more issues and negative feedback on the product, or trouble reaching customer support. Payment delays (assuming this means the number of days late a customer paid) has an association with churn at 0.31 - longer delays could indicate not as much focus/attention on using the product and/or leading to forgetting the payment deadline. Spend also has an impact on churn, but an inverse relationship at -0.4. As seen in the visualization in the EDA section, the less spend for a customer may lead to the customer having less investment in the product and lower commitment. 
 
 Less so but still impactful: Age also plays a role in churn (0.22 correlation), as the data shows that for customers beyond the age of 50, the churn proportion goes up to 100%. Gender also plays a role, where more females churn. The last interaction (0.15) between the customer and company is important as well, since the longer that there's no communication, the less informed/aware the customer is of the product.
 
@@ -69,9 +69,9 @@ Because support calls and last interaction both impact churn, there may need to 
 
 To keep up with interactions, approaches include sending out newsletters to customers on the latest features/product roadmap or having the customer success team build more personalized relationships with customers (especially those that the company has not had a recent interaction with) on a more consistent basis (less than 2 weeks). 
 
-To encourage on time payments, an approach could be to first understand and survey customers on what's causing the delay and why they churned. Sending out surveys to customers for feedback would help paint a real picture of what they think of the product and customer service, and if that causes any delays. Then, on top of keep engaged with the customer, offer reminders with incentives to encourage timely payments. 
+To encourage on time payments, an approach could be to first understand and survey customers on what's causing the delay and why they churned. Sending out surveys to customers for feedback would help paint a real picture of what they think of the product and customer service, and if that causes any delays. Then, on top of keeping engaged with the customer, offer reminders with incentives to encourage timely payments. 
 
-To address spend, focus on the customers who have a spend of less than 400 (across the whole dataset - about 90%), and consider whether to increase spend for them so that they have more incentives or exclusive access to new updates/features. Establishing loyalty programs with offerings can help customers be more encouraged to continue with the company.
+To address spend, focus on the customers that spent less than 600 (makes up about 41% of customers and 57% of all churn in the training data), and consider whether to increase incentives or exclusive access to new updates/features. Establishing loyalty programs with offerings and having the customer success team offer upsells can help customers be more encouraged to continue with the company.
 
 In addition to the above approaches based on this data, having consistent qualitative feedback/context from customers would also be important in determining the strategies to reduce churn.
 
@@ -79,7 +79,7 @@ In addition to the above approaches based on this data, having consistent qualit
 
 With respect to the training dataset and using the strategies above, I would prioritize the customers who had 5 or more support calls, since they make up about 32.5% of customers but almost 57% of all who churned, and since support calls has the strongest relationship/impact on churn. For customers who had more than 5 support calls, 100% of them churned. 
 
-The next group I would focus on are customers who had more than a 20 day payment delay - these customers make up 25% of the data but 42% of the people who churned.
+The next group I would focus on are customers who had more than a 20 day payment delay (there may be overlap with the customers in the group above) - these customers make up almost 20% of the data but 33% of the people who churned. 
 
 
 #### Notes:
