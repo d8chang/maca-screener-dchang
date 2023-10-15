@@ -90,5 +90,7 @@ The next group I would focus on are customers who had spent under 600 (there is 
 
 
 #### Notes:
-Solution (this exercise) took about 13 hours to build
-Investigating association/indicators, not necessarily causation (correlation does not mean causation)
+- Solution (this exercise) took about 13 hours to build
+- Investigating association/indicators, not necessarily causation (correlation does not mean causation)
+- Future work could be investigating confounding variables
+- Assume little multicollinearity
