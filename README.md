@@ -19,6 +19,7 @@ The test dataset had more cleaning steps. I checked the unique values for each f
 Once these fields were cleaned, the data types of each variable were converted to match with the data types of the training set.
 
 Here were the interpretations/assumptions made for the fields:
+
 * Customer ID
 * Age - customer's age
 * Gender - customer's gender
@@ -32,17 +33,18 @@ Here were the interpretations/assumptions made for the fields:
 * Last Interaction - number of days since the last communication with the customer (assuming mutual conversation/engagement)
 * Churn - whether the customer stopped doing business with the company
 
-To set up the datasets, I converted the categorical variables (gender, subscription, and contractlength) to numerical codes. Then, I set up the X and y training and test sets. I dropped the customer id and spend_group since id is a unique identifier and spend is already in the dataset.
+To set up the datasets, I converted the categorical variables (gender, subscription, and contractlength) to numerical codes. Then, I set up the X and y training and testing sets. I dropped the customer id and spend_group since id is a unique identifier and spend is already in the dataset.
+
 ## What are the strongest indicators of what would cause a customer to churn?
 
-I visualized and summarized the churn proportion against each variable, and leveraged a few classification models to identify the indicators. 
+I visualized and summarized the churn proportion trends against each variable, and leveraged a few classification models to identify the indicators. 
 
 ### Findings from the EDA of the training dataset (see visuals within "EDA on Training Dataset")
 
 - Comparing the proportion of customers by age who churn, the trend shows that the churn rate decreases steadily up until the age of 50, to which the rate spikes to 100%. This might indicate that customers who are between 30-50 are less inclined to churn.
 - Gender also seems to play a role - almost 67% of females churn compared to 49% of males.
 - For tenure and usage frequency, there is a similar trend where the churn proportion dips at a certain value - for tenure, it's at about 25, and for frequency it's at 10. This makes sense since the longer a customer is with the product, this might indicate the more satisfied/engaged they are with using the product. If the customer had a shorter tenure, this may lead to less commitment to the product. It seems that these 2 fields have an inverse relationship with churn. For tenure, however, there is an interesting dip between 5-11, maybe another optimal amount of time for a customer to do business with the company.
-- After around 5 support calls, the churn rate spikes to 100%. Increased support calls may indicate more issues with the product leading to churn or attempts to connect with customer support.
+- For support calls, the churn proportion significantly goes up after 2 calls. After around 5 support calls, the churn rate spikes to 100%. Increased support calls may indicate more issues with the product leading to churn or attempts to connect with customer support.
 - After a certain length of delay for payment (20 days), similar to support calls, the churn rate goes up to 100%.
 - For each subscription plan, around the same proportion of customers churned (55-58%)
 - All customers on the monthly contract churned.
@@ -54,7 +56,7 @@ For modeling the training dataset, 3 methods were used: Logistic Regression, Dec
 
 The logistic regression model was better performing overall at 69-70% accuracy and 84% from cross-validation - I looked into the feature importance based on the absolute value of the coefficients of the model, and the top features were calls, spend, delay, gender, and last interaction. See first graph within the "Modeling" section for reference. 
 
-The trees models were performing lower at 51-62% accuracy, but the feature importance showed that the spend, age, calls, delay, contractlength, and last interaction had higher importance.
+The trees models were performing lower at 51-62% accuracy, but the feature importance showed that the spend, calls, delay, contractlength, and last interaction had higher importance.
 
 Finally, I also used a heatmap to compare the associations between each pair of variables. The variables with the stronger relationship with churn are calls, delay, age, last interaction, and spend. 
 
@@ -65,8 +67,8 @@ Support calls and churn have a correlation of 0.57. An increasing number of supp
 Less so but still impactful: Age also plays a role in churn (0.22 correlation), as the data shows that for customers beyond the age of 50, the churn proportion goes up to 100%. Gender also plays a role, where more females churn. The last interaction (0.15) between the customer and company is important as well, since the longer that there's no communication, the less informed/aware the customer is of the product.
 
 Other callouts from the Association heatmap:
-- Calls and payment delay has some positive association - more support calls could mean issues with payment/product and less incentive to pay on time
-- Calls and total spend have an inverse association
+- Calls and payment delay has some positive association at 0.16 - more support calls could mean issues with payment/product and less incentive to pay on time
+- Calls and total spend have an inverse association at -0.21 - possibly the more calls/troubleshooting there are is associated with a lower willingness to spend
 
 ## What could a company do to reduce churn given this data?
 
