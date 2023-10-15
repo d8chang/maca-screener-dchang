@@ -68,17 +68,17 @@ Less so but still impactful: Age also plays a role in churn (0.22 correlation), 
 
 Other callouts from the Association heatmap:
 - Calls and payment delay has some positive association at 0.16 - more support calls could mean issues with payment/product and less incentive to pay on time
-- Calls and total spend have an inverse association at -0.21 - possibly the more calls/troubleshooting there are is associated with a lower willingness to spend
+- Calls and total spend have an inverse association at -0.21 - possibly more calls/troubleshooting is associated with a lower willingness to spend
 
 ## What could a company do to reduce churn given this data?
 
-Because support calls and last interaction both impact churn, there may need to be a balance of better responsiveness/support and troubleshooting to the point where there are less calls needed, but also consistent interactions where the customer is engaged and knows what's up to date. To address the high number of calls that lead to churn, approaches could be hiring more qualified customer support reps or providing incentives for quicker responses/proactiveness with customers to improve service (conducting more quota/bonus-based performance reviews). The goal would be to make it easier for customers to reach out for help and to get the help they need quickly and more effectively. 
+Because support calls and last interaction both impact churn, there may need to be a balance of better responsiveness/support and troubleshooting to the point where there are less calls needed, but also consistent interactions where the customer is engaged and knows what's up to date. To address the high number of calls that lead to churn, approaches could be hiring more qualified customer support reps or providing incentives for quicker responses/proactiveness with customers to improve service (conducting more quota/bonus-based performance reviews). The goal would be to make it easier for customers to reach out for help and to get the help they need more quickly and more effectively. 
 
 To keep up with interactions, approaches include sending out newsletters to customers on the latest features/product roadmap or having the customer success team build more personalized relationships with customers (especially those that the company has not had a recent interaction with) on a more consistent basis (less than 2 weeks). 
 
 To encourage on time payments, an approach could be to first understand and survey customers on what's causing the delay and why they churned. Sending out surveys to customers for feedback would help paint a real picture of what they think of the product and customer service, and if that causes any delays. Then, on top of keeping engaged with the customer, offer reminders with incentives to encourage timely payments. 
 
-To address spend, focus on the customers that spent less than 600 (makes up about 41% of customers and 57% of all churn in the training data), and consider whether to increase incentives or exclusive access to new updates/features. Establishing loyalty programs with offerings and having the customer success team offer upsells can help customers be more encouraged to continue with the company.
+To address spend, focus on the customers that spent less than 600 (they make up about 41% of customers and 57% of all customers who churned in the training data), and consider whether to increase incentives or exclusive access to new updates/features. Establishing loyalty programs with offerings and having the customer success team offer upsells can help customers be more encouraged to continue with the company.
 
 In addition to the above approaches based on this data, having consistent qualitative feedback/context from customers would also be important in determining the strategies to reduce churn.
 
@@ -86,8 +86,9 @@ In addition to the above approaches based on this data, having consistent qualit
 
 With respect to the training dataset and using the strategies above, I would prioritize the customers who had 5 or more support calls, since they make up about 32.5% of customers but almost 57% of all who churned, and since support calls has the strongest relationship/impact on churn. For customers who had more than 5 support calls, 100% of them churned. 
 
-The next group I would focus on are customers who had more than a 20 day payment delay (there is be overlap with the customers in the group above) - these customers make up almost 20% of the data but almost 34% of the people who churned. 
+The next group I would focus on are customers who had spent under 600 (there is overlap with the customers in the group above) - these customers make up 57% of the people who churned. I would apply the strategies above on encouraging loyalty and increasing incentives for these customers.
 
 
 #### Notes:
 Solution (this exercise) took about 13 hours to build
+Investigating association/indicators, not necessarily causation (correlation does not mean causation)
