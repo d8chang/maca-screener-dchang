@@ -32,6 +32,7 @@ Here were the interpretations/assumptions made for the fields:
 * Last Interaction - number of days since the last communication with the customer (assuming mutual conversation/engagement)
 * Churn - whether the customer stopped doing business with the company
 
+To set up the datasets, I converted the categorical variables (gender, subscription, and contractlength) to numerical codes. Then, I set up the X and y training and test sets. I dropped the customer id and spend_group since id is a unique identifier and spend is already in the dataset.
 ## What are the strongest indicators of what would cause a customer to churn?
 
 I visualized and summarized the churn proportion against each variable, and leveraged a few classification models to identify the indicators. 
