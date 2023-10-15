@@ -56,7 +56,7 @@ For modeling the training dataset, 3 methods were used: Logistic Regression, Dec
 
 The logistic regression model was better performing overall at 69-70% accuracy and 84% from cross-validation - I looked into the feature importance based on the absolute value of the coefficients of the model, and the top features were calls, spend, delay, gender, and last interaction. See first graph within the "Modeling" section for reference. 
 
-The trees models were performing lower at 51-62% accuracy, but the feature importance showed that the spend, calls, delay, contractlength, and last interaction had higher importance.
+The trees models were performing lower at 51-62% accuracy, but the feature importance graph showed that the spend, calls, delay, contractlength, and last interaction had higher importance.
 
 Finally, I also used a heatmap to compare the associations between each pair of variables. The variables with the stronger relationship with churn are calls, delay, age, last interaction, and spend. 
 
