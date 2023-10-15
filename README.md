@@ -81,5 +81,5 @@ With respect to the training dataset, I would prioritize the customers who had 5
 The next group I would focus on are customers who had more than a 20 day payment delay - these customers make up 25% of the data but 42% of the people who churned.
 
 
-Notes:
+#### Notes:
 Solution (this exercise) took about 12 hours to build
